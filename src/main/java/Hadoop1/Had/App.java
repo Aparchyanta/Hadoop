@@ -27,7 +27,7 @@ public class App
 	   
 	   public static void main(String[] args) {
 		   Properties properties = new Properties();
-		   File file = new File("C:\\My Drive\\Cloudwick\\Java Tasks\\Had\\target\\classes\\db.properties");
+		   File file = new File("C:\\My Drive\\Cloudwick\\Had\\target\\classes\\db.properties");
 		   FileInputStream fileInput;
 		 try {
 		 fileInput = new FileInputStream(file);
@@ -44,7 +44,7 @@ public class App
 		   final String DB_URL = properties.getProperty("jdbcUrl");
 		   final String USER = properties.getProperty("jdbcUser");
 		   final String PASS = properties.getProperty("jdbcPass");
-		   System.out.println ("jdbcDrivr" + JDBC_DRIVER);
+		   System.out.println ("jdbcDrivr: " + JDBC_DRIVER);
 		   Connection conn = null;
 		   
 	   java.sql.Statement stmt = null;
@@ -60,7 +60,7 @@ public class App
 	      System.out.println("Creating statement...");
 	      stmt = conn.createStatement();
 	      String sql;
-	      sql = "SELECT Student_ID, fname, lname FROM my_table";
+	      sql = "SELECT Student_ID, fname, lname FROM student";
 	      ResultSet rs = stmt.executeQuery(sql);
 
 	      //STEP 5: Extract data from result set
